@@ -18,7 +18,6 @@ import javax.swing.table.DefaultTableModel;
  * @author Tiago
  */
 public class Home extends javax.swing.JFrame {
-    
 
     /**
      * Creates new form Home
@@ -39,10 +38,10 @@ public class Home extends javax.swing.JFrame {
 
         titulo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        nomecid = new javax.swing.JTextField();
+        estadocid = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        populacaocid = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -58,29 +57,29 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Nome:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nomecid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nomecidActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        estadocid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                estadocidActionPerformed(evt);
             }
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Estado:");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        populacaocid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                populacaocidActionPerformed(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Populção");
+        jLabel3.setText("População:");
 
         jButton2.setText("Editar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -94,10 +93,13 @@ public class Home extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Estado", "População"
+                "Id", "Nome", "Estado", "População"
             }
         ));
         jScrollPane1.setViewportView(cidades);
+        if (cidades.getColumnModel().getColumnCount() > 0) {
+            cidades.getColumnModel().getColumn(0).setMaxWidth(50);
+        }
 
         jButton4.setText("Cadastrar");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -139,9 +141,9 @@ public class Home extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
                             .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3))))
+                            .addComponent(nomecid)
+                            .addComponent(estadocid)
+                            .addComponent(populacaocid))))
                 .addGap(148, 148, 148))
         );
         layout.setVerticalGroup(
@@ -152,15 +154,15 @@ public class Home extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomecid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(estadocid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(populacaocid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -174,65 +176,194 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nomecidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomecidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nomecidActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void estadocidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadocidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_estadocidActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void populacaocidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_populacaocidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_populacaocidActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        String url = "jdbc:postgresql://200.131.206.13:5432/tiago_souza9935";
+        String user = "tiago_souza9935";
+        String password = "8257995";
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        DefaultTableModel model = (DefaultTableModel) cidades.getModel();
+        
+        int row = cidades.getSelectedRow();
+        
+        if(row == -1){
+            JOptionPane.showMessageDialog(null, "Nenhuma cidade selecionada!");
+            return;
+        }
+        
+        String id = cidades.getModel().getValueAt(row, 0).toString();
+        
+        String nomeCidade = nomecid.getText();
+        String estadoCidade = estadocid.getText();
+        int populacaoCidade;
+        
+        if(nomeCidade.trim().equals("")){
+            nomeCidade = cidades.getModel().getValueAt(row, 1).toString();
+        }
+        
+        if(estadoCidade.trim().equals("")){
+            estadoCidade = cidades.getModel().getValueAt(row, 2).toString();
+        }
+        
+        if(populacaocid.getText().trim().equals("")){
+            populacaoCidade = Integer.parseInt(cidades.getModel().getValueAt(row, 3).toString());
+        } else {
+            populacaoCidade = Integer.parseInt(populacaocid.getText());
+        }
+
+        try {
+            conn = DriverManager.getConnection(url, user, password);
+            stmt = conn.createStatement();
+            
+            stmt.executeQuery("UPDATE sat.cidade SET nomecid = '"+nomeCidade+"', estadocid = '"+estadoCidade+"', populacaocid = "+populacaoCidade+" WHERE codigocid = "+id+";");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
+        carregarDados();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        String url = "jdbc:postgresql://200.131.206.13:5432/tiago_souza9935";
+        String user = "tiago_souza9935";
+        String password = "8257995";
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        DefaultTableModel model = (DefaultTableModel) cidades.getModel();
+        
+        String nomeCidade = nomecid.getText();
+        String estadoCidade = estadocid.getText();
+        int populacaoCidade = Integer.parseInt(populacaocid.getText());
+
+        try {
+            conn = DriverManager.getConnection(url, user, password);
+            stmt = conn.createStatement();
+            
+            stmt.executeQuery("INSERT INTO sat.cidade VALUES (12,'"+nomeCidade+"','"+estadoCidade+"',"+populacaoCidade+");");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
+        carregarDados();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        
+
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        String url = "jdbc:postgresql://200.131.206.13:5432/tiago_souza9935";
+        String user = "tiago_souza9935";
+        String password = "8257995";
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        DefaultTableModel model = (DefaultTableModel) cidades.getModel();
+        
+        int row = cidades.getSelectedRow();
+        
+        if(row == -1){
+            JOptionPane.showMessageDialog(null, "Nenhuma cidade selecionada!");
+            return;
+        }
+        
+        String id = cidades.getModel().getValueAt(row, 0).toString();
+
+        try {
+            conn = DriverManager.getConnection(url, user, password);
+            stmt = conn.createStatement();
+            
+            stmt.executeQuery("DELETE FROM sat.cidade WHERE codigocid = "+id+";");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
+        carregarDados();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void carregarDados() {
         String url = "jdbc:postgresql://200.131.206.13:5432/tiago_souza9935";
-                String user = "tiago_souza9935";
-                String password = "8257995";
-                Connection conn = null;
-                Statement stmt = null;
-                ResultSet rs = null;
-                
-                DefaultTableModel model = (DefaultTableModel) cidades.getModel();
+        String user = "tiago_souza9935";
+        String password = "8257995";
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        
+        DefaultTableModel model = (DefaultTableModel) cidades.getModel();
+        model.setRowCount(0);
+        
+        try {
+            conn = DriverManager.getConnection(url, user, password);
+            stmt = conn.createStatement();
 
-                try {
-                    conn = DriverManager.getConnection(url,user,password);
-                    stmt = conn.createStatement();
-
-                    rs = stmt.executeQuery("SELECT * FROM sat.cidade");
-                    while(rs.next()){
-                        Object[] row = { rs.getString("nomecid"), rs.getString("estadocid"), rs.getInt("populacaocid") };
-                        model.addRow(row);
-                    }
-                } catch(SQLException e){
-                    System.out.println(e.getMessage());
-                } finally {
-                    try{
-                        if(rs != null) rs.close();
-                        if(stmt != null) stmt.close();
-                    } catch(SQLException ex){
-                        System.err.println(ex.getMessage());
-                    }
+            rs = stmt.executeQuery("SELECT * FROM sat.cidade");
+            while (rs.next()) {
+                Object[] row = {rs.getString("codigocid"), rs.getString("nomecid"), rs.getString("estadocid"), rs.getInt("populacaocid")};
+                model.addRow(row);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
                 }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -259,7 +390,7 @@ public class Home extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -270,6 +401,7 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable cidades;
+    private javax.swing.JTextField estadocid;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -277,9 +409,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField nomecid;
+    private javax.swing.JTextField populacaocid;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }
